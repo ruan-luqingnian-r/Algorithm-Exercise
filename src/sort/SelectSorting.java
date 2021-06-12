@@ -1,6 +1,9 @@
 package sort;
 
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
+import java.util.Random;
 
 /**
  * @PackgeName: sort
@@ -13,9 +16,23 @@ import java.util.Arrays;
  */
 public class SelectSorting {
     public static void main(String[] args) {
-        int[] arr = {3,2,1,23,4,2,4,21,3,12};
-        int[] sort = sort(arr);
-        System.out.println(Arrays.toString(sort));
+        //排序功能测试
+//        int[] arr = {3,2,1,23,4,2,4,21,3,12};
+//        int[] sort = sort(arr);
+//        System.out.println(Arrays.toString(sort));
+        //排序性能测试
+        int[] arr = new int[800000];
+        Random random = new Random();
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = random.nextInt(1) * 80000;
+        }
+        Date date1 = new Date();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh-mm-ss-S");
+        System.out.println("开始排序:"+simpleDateFormat.format(date1));
+        sort(arr);
+        Date date2 = new Date();
+        System.out.println("排序完成:"+simpleDateFormat.format(date2));
+
 
     }
 
