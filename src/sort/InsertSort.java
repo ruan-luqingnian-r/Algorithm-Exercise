@@ -21,17 +21,20 @@ public class InsertSort {
 //        sort(arr);
 //        System.out.println(Arrays.toString(arr));
         //排序速度测试
+        System.out.println("===排序性能测试===");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss SSS");
+        int[] array = new int[80000];
         Random random = new Random();
-        int[] arr = new int[800000];
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = random.nextInt(1)*80000;
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt(1) * 800000;
         }
         Date date1 = new Date();
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss:S");
-        System.out.println("开始排序:"+simpleDateFormat.format(date1));
-        sort(arr);
+        String dateStr1 = simpleDateFormat.format(date1);
+        System.out.println("开始排序"+dateStr1);
+        sort(array);
         Date date2 = new Date();
-        System.out.println("排序完成:"+simpleDateFormat.format(date2));
+        String dateStr2 = simpleDateFormat.format(date2);
+        System.out.println("排序结束"+dateStr2);
     }
 
     /**
