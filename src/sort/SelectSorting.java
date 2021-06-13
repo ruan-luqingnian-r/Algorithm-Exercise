@@ -50,6 +50,7 @@ public class SelectSorting {
         for (int i = 0; i < arr.length; i++) {
             int min = arr[i];
             int minIndex = i;
+            //记录下标和值用于之后的数据交换
             for (int j = i + 1; j < arr.length; j++) {
                 if (min > arr[j]){
                     min = arr[j];
