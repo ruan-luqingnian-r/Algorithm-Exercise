@@ -1,6 +1,9 @@
 package sort;
 
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
+import java.util.Random;
 
 /**
  * @PackgeName: sort
@@ -14,9 +17,21 @@ import java.util.Arrays;
 public class InsertSort {
     public static void main(String[] args) {
         //功能测试
-        int[] arr = {2,32,13,12,412,123,12,41};
+//        int[] arr = {2,32,13,12,412,123,12,41};
+//        sort(arr);
+//        System.out.println(Arrays.toString(arr));
+        //排序速度测试
+        Random random = new Random();
+        int[] arr = new int[800000];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = random.nextInt(1)*80000;
+        }
+        Date date1 = new Date();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss:S");
+        System.out.println("开始排序:"+simpleDateFormat.format(date1));
         sort(arr);
-        System.out.println(Arrays.toString(arr));
+        Date date2 = new Date();
+        System.out.println("排序完成:"+simpleDateFormat.format(date2));
     }
 
     /**
