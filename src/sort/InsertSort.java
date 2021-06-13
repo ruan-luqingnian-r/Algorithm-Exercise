@@ -13,6 +13,7 @@ import java.util.Arrays;
  */
 public class InsertSort {
     public static void main(String[] args) {
+        //功能测试
         int[] arr = {2,32,13,12,412,123,12,41};
         sort(arr);
         System.out.println(Arrays.toString(arr));
@@ -36,9 +37,9 @@ public class InsertSort {
                 //之前的数字大于待排数字
                 //将待排数据加入数组前
                 arr[index + 1] = arr[index];
-                index--;//??????
+                index--;//向前一步检查两个值的大小
             }
-            arr[index + 1] = value;//??????
+            arr[index + 1] = value;//还原数组值
         }
         return arr;
     }
