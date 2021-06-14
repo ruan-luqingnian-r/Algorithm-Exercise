@@ -15,8 +15,9 @@ public class test {
     public static void main(String[] args) {
 
         int[] arr = {12,21,3,12312,412,412,123,123,123,14,12,123,124,12};
-        int[] bubbleSort = bubbleSort(arr);
-        System.out.println(Arrays.toString(bubbleSort));
+        //int[] sort = bubbleSort(arr);
+        int[] sort = selectSort(arr);
+        System.out.println(Arrays.toString(sort));
     }
 
     /**
@@ -44,7 +45,22 @@ public class test {
      * @param arr
      * @return
      */
-    public static int[] insertSort(int[] arr){
+    public static int[] selectSort(int[] arr){
+        for (int i = 0; i < arr.length; i++) {
+            int min = arr[i];
+            int index = i;
+            for (int j = i + 1; j < arr.length ; j++) {
+                if (arr[j] < min){
+                    min = arr[j];
+                    index = j;
+                }
+            }
+            //交换数字
+            if (index != i){
+                arr[index] = arr[i];
+                arr[i] = min;
+            }
+        }
         return arr;
     }
 }
