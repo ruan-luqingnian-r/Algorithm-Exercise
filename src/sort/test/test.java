@@ -16,7 +16,7 @@ public class test {
 
         int[] arr = {12,21,3,12312,412,412,123,123,123,14,12,123,124,12};
         //int[] sort = bubbleSort(arr);
-        int[] sort = selectSort(arr);
+        int[] sort = insertSort(arr);
         System.out.println(Arrays.toString(sort));
     }
 
@@ -61,6 +61,23 @@ public class test {
                 arr[i] = min;
             }
         }
+        return arr;
+    }
+
+    /**
+     * 插入排序
+     */
+    public static int[] insertSort(int[] arr){
+        for (int i = 1; i < arr.length; i++) {
+            int min = arr[i];
+            int index = i - 1;
+            while (index >= 0 && arr[index] > min){
+                arr[index + 1] = arr[index];
+                index--;
+            }
+            arr[index + 1] = min;
+        }
+
         return arr;
     }
 }
