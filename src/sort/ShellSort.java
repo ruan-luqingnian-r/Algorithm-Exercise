@@ -15,24 +15,24 @@ import java.util.Date;
  */
 public class ShellSort {
     public static void main(String[] args) {
-        //功能测试
-        int[] arr = {12,321312,312,421,312,3,142,13,12,421,3,124,12,1,31};
-        sort(arr);
-        System.out.println(Arrays.toString(arr));
-        //性能测试
-//        int[] arr = new int[80000];
-//        for (int i = 0; i < arr.length; i++) {
-//            arr[i] = (int) (Math.random() * 800000);//[0,8000000)的随机数
-//        }
-//
-//        Date date1 = new Date();
-//        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:S");
-//        String date1Ser = simpleDateFormat.format(date1);
-//        System.out.println("排序前的时间是:"+date1Ser);
+//        //功能测试
+//        int[] arr = {12,321312,312,421,312,3,142,13,12,421,3,124,12,1,31};
 //        sort(arr);
-//        Date date2 = new Date();
-//        String date2Ser = simpleDateFormat.format(date2);
-//        System.out.println("排序后的时间是:"+date2Ser);
+//        System.out.println(Arrays.toString(arr));
+        //性能测试
+        int[] arr = new int[800000];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = (int) (Math.random() * 800000);//[0,8000000)的随机数
+        }
+
+        Date date1 = new Date();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:S");
+        String date1Ser = simpleDateFormat.format(date1);
+        System.out.println("排序前的时间是:"+date1Ser);
+        sort(arr);
+        Date date2 = new Date();
+        String date2Ser = simpleDateFormat.format(date2);
+        System.out.println("排序后的时间是:"+date2Ser);
 
     }
 
