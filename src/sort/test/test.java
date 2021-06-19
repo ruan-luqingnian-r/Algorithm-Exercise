@@ -16,7 +16,7 @@ public class test {
 
         int[] arr = {12,21,3,12312,412,412,123,123,123,14,12,123,124,12};
         //int[] sort = bubbleSort(arr);
-        int[] sort = insertSort(arr);
+        int[] sort = shellSort(arr);
         System.out.println(Arrays.toString(sort));
     }
 
@@ -89,7 +89,19 @@ public class test {
      * 希尔排序
      */
     public static int[] shellSort(int[] arr){
-        
+        for (int gap = arr.length / 2; gap > 0 ; gap /= 2) {
+            for (int i = gap; i < arr.length ; i++) {
+                int value = arr[i];
+                int index  = i;
+                if (arr[index] < arr[index - gap]){
+                    while ((index - gap) >= 0 && value < arr[index - gap]) {
+                        arr[index] = arr [index - gap];
+                        index = index - gap;
+                    }
+                    arr[index] = value;
+                }
+            }
+        }
         return arr;
     }
 }
