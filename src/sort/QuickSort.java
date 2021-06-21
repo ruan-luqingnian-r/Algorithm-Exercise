@@ -1,5 +1,7 @@
 package sort;
 
+import java.util.Arrays;
+
 /**
  * @PackgeName: sort
  * @ClassName: QuickSort
@@ -12,7 +14,9 @@ package sort;
 public class QuickSort {
 
     public static void main(String[] args) {
-
+        int[] arr = {12312,312,312,312,124,123,12,31};
+        int[] sort = sort(arr, 0, arr.length - 1);
+        System.out.println(Arrays.toString(sort));
     }
     public static int[] sort(int[] arr,int left,int right){
         int l = left;//左索引
@@ -27,7 +31,7 @@ public class QuickSort {
             if (arr[r] > pivot){
                 r--;
             }
-            if (l > r){
+            if (l >= r){
                 break;
             }
 
@@ -42,9 +46,9 @@ public class QuickSort {
                 l++;
             }
         }
-        if (r == l){
-            l++;
-            r--;
+        if (l == r){
+            l = l + 1;
+            r = r - 1;
         }
         if (left < r){
             //向左递归
