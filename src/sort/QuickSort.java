@@ -33,7 +33,25 @@ public class QuickSort {
 
             //开始交换
             temp = arr[l];
-            arr[r] = arr[l];
+            arr[l] = arr[r];
+            arr[r] = temp;
+            if (arr[l] == pivot){
+                r--;
+            }
+            if (arr[r] == pivot){
+                l++;
+            }
+        }
+        if (r == l){
+            l++;
+            r--;
+        }
+        if (left < r){
+            //向左递归
+            sort(arr, left, r);
+        }
+        if (right > l ){
+            sort(arr, l, right);
         }
 
         return arr;
