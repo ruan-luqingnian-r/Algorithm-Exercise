@@ -21,6 +21,8 @@ public class SelectSorting {
 //        int[] sort = sort(arr);
 //        System.out.println(Arrays.toString(sort));
         //排序性能测试
+
+        
         int[] arr = new int[80000];
         Random random = new Random();
         for (int i = 0; i < arr.length; i++) {
