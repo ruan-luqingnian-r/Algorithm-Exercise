@@ -16,14 +16,14 @@ import java.util.Date;
 public class QuickSort {
 
     public static void main(String[] args) {
-//        int[] arr = {12312,312,312,312,124,123,12,31};
-//        int[] sort = sort(arr, 0, arr.length - 1);
-//        System.out.println(Arrays.toString(sort));
-        //性能测试
-        int[] arr = new int[80000000];
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = (int) (Math.random() * 800000);//[0,8000000)的随机数
-        }
+        int[] arr = {12312,312,312,312,124,123,12,31};
+        int[] sort = sort(arr, 0, arr.length - 1);
+        System.out.println(Arrays.toString(sort));
+//        //性能测试
+//        int[] arr = new int[80000000];
+//        for (int i = 0; i < arr.length; i++) {
+//            arr[i] = (int) (Math.random() * 800000);//[0,8000000)的随机数
+//        }
 
         Date date1 = new Date();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:S");
@@ -41,10 +41,10 @@ public class QuickSort {
         int temp = 0;
 
         while (r > l){
-            if (arr[l] < pivot){
+            while (arr[l] < pivot){
                 l++;
             }
-            if (arr[r] > pivot){
+            while (arr[r] > pivot){
                 r--;
             }
             if (l >= r){
