@@ -16,8 +16,9 @@ public class test {
 
         int[] arr = {12,21,3,12312,412,412,123,123,123,14,12,123,124,12};
         //int[] sort = bubbleSort(arr);
-        int[] sort = shellSort(arr);
-        System.out.println(Arrays.toString(sort));
+        //int[] sort = shellSort(arr);
+        int[] ints = quickSort(arr, 0, arr.length - 1);
+        System.out.println(Arrays.toString(ints));
     }
 
 
@@ -112,5 +113,46 @@ public class test {
     /**
      * 快速排序
      */
-    
+    public static int[] quickSort(int[] arr,int left,int right){
+        int l = left;
+        int r = right;
+        int pivot = arr[(left + right) / 2];//中轴
+        int temp = 0;
+        while (r > l){
+            if (arr[l] < pivot){
+                l++;
+            }
+            if (arr[r] > pivot){
+                r--;
+            }
+            if (l >= r){
+                break;
+            }
+
+            //开始交换
+            temp = arr[l];
+            arr[l] = arr[r];
+            arr[r] = temp;
+            if (arr[l] == pivot){
+                r--;
+            }
+            if (arr[r] == pivot){
+                l++;
+            }
+        }
+        //防止溢出
+        if (l == r){
+            l = l + 1;
+            r = r - 1;
+        }
+        if (left < r){
+            //向左递归
+            quickSort(arr, left, r);
+        }
+        if (right > l ){
+            quickSort(arr, l, right);
+        }
+
+        return arr;
+    }
 }
