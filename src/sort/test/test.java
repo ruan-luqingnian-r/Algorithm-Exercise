@@ -119,10 +119,10 @@ public class test {
         int pivot = arr[(left + right) / 2];//中轴
         int temp = 0;
         while (r > l){
-            if (arr[l] < pivot){
+            while (arr[l] < pivot){
                 l++;
             }
-            if (arr[r] > pivot){
+            while (arr[r] > pivot){
                 r--;
             }
             if (l >= r){
