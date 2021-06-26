@@ -7,7 +7,7 @@ import java.util.Date;
 /**
  * @PackgeName: sort
  * @ClassName: QuickSort
- * @Author: 小天才
+ * @Author: 小天才1111
  * Date: 2021/6/21 7:30
  * project name: Algorithm-Exercise
  * @Version: 0.0.1
