@@ -1,6 +1,10 @@
 package ruan;
 
+import java.net.InetSocketAddress;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
+import java.util.Random;
 
 /**
  * @Author: ruan
@@ -10,10 +14,24 @@ import java.util.Arrays;
  */
 public class SelectSort {
     public static void main(String[] args) {
-        int[] arr = {3,2,4,6,1,8,6,9};
-        System.out.println("排序前:" + Arrays.toString(arr));
+//        int[] arr = {3,2,4,6,1,8,6,9};
+//        System.out.println("排序前:" + Arrays.toString(arr));
+//        sort(arr);
+//        System.out.println("排序后:" + Arrays.toString(arr));
+        Random random = new Random();
+        int[] arr = new int[800000];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = random.nextInt(10000);
+        }
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss:S");
+        Date date = new Date();
+        String format = simpleDateFormat.format(date);
+        System.out.println("开始排序:" + format);
         sort(arr);
-        System.out.println("排序后:" + Arrays.toString(arr));
+        Date date1 = new Date();
+        String format1 = simpleDateFormat.format(date1);
+        System.out.println("排序完成:" + format1);
+
     }
     public static void sort(int[] arr){
         //假设最小值的位置是第一个
@@ -30,7 +48,7 @@ public class SelectSort {
             temp = arr[i];
             arr[i] = arr[minPos];
             arr[minPos] = temp;
-            System.out.println("第" + (i+1) + "次排序:" + Arrays.toString(arr));
+            //System.out.println("第" + (i+1) + "次排序:" + Arrays.toString(arr));
         }
     }
 
