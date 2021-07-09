@@ -6,6 +6,7 @@ import java.util.Arrays;
  * @Author: ruan
  * Date: 2021/7/9 15:28
  * @Description: 选择排序
+ * 时间复杂度:(O)= n^2
  */
 public class SelectSort {
     public static void main(String[] args) {
@@ -17,7 +18,7 @@ public class SelectSort {
     public static void sort(int[] arr){
         //假设最小值的位置是第一个
         int temp = 0;
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 0; i < arr.length - 1; i++) {
             int minPos = i;
             //遍历数组找到真正的最小值
             for (int j = i + 1; j < arr.length; j++) {
