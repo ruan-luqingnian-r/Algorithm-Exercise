@@ -1,5 +1,7 @@
 package ruan;
 
+import java.util.Arrays;
+
 /**
  * @Author: ruan
  * Date: 2021/7/10 19:02
@@ -8,18 +10,20 @@ package ruan;
 public class QuickSort {
     public static void main(String[] args) {
         int[] arr = {12312,12312,3,123,312,4,313,234,4,1213,312};
+        quickSort(arr,0,arr.length - 1);
+        System.out.println(Arrays.toString(arr));
     }
     public static void quickSort(int[] arr,int left,int right){
         int l = left;//左端点值
         int r = right;//右端点值
-        int midValue = arr[(left + right)];//中间值
+        int midValue = arr[(left + right) / 2];//中间值
         int temp = 0;
-        while (r >= l) {
+        while (r > l) {
             //比较索引位置和中间值的大小
-            if (arr[l] < midValue) {
+            while (arr[l] < midValue) {
                 l++;
             }
-            if (arr[r] > midValue) {
+            while (arr[r] > midValue) {
                 r--;
             }
             if (l >= r){
