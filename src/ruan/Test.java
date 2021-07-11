@@ -10,27 +10,34 @@ import java.util.Arrays;
 public class Test {
     public static void main(String[] args) {
         int[] arr = {12,323,12,12,412,312,4,2,12};
-        selectSort(arr);
+        BubbleSort(arr);
         System.out.println(Arrays.toString(arr));
 
     }
 
-    public static void selectSort(int[] arr){
-        int temp = 0;//辅助变量用于交换数字
+    /**
+     * 冒泡排序
+     * 排序思路：
+     * 1.比较数组第一个数字与其下一个数字的大小
+     * 2.如果第一个数字比下一个大则两者交换
+     * 3.直到数组尾部这是最大的数字
+     * @param arr 待排序数组
+     */
+    public static void BubbleSort(int[] arr){
+        int temp = 0;//用于交换
         for (int i = 0; i < arr.length - 1; i++) {
-            //每次排序默认第一个数字是最小的
-            int minPos = i;
-            //遍历后续数字并与之比较直到找到最小数字的下标
-            for (int j = i + 1; j < arr.length; j++) {
-                if (arr[minPos] > arr[j]){
-                    minPos = j;
+            for (int j = 0; j < arr.length - 1 - i; j++) {
+                if (arr[j] > arr[j + 1]){
+                    //交换两个数字
+                    temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
                 }
             }
-            //找到最小数字的下标，开始交换啷个数字
-            temp = arr[minPos];
-            arr[minPos] = arr[i];
-            arr[i] = temp;
         }
+
     }
+
+
 
 }
