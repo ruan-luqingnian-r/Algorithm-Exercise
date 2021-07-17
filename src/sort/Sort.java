@@ -31,10 +31,16 @@ public class Sort {
     }
     //选择排序
     public static void selectSort(int[] arr){
-        int temp = 0;
-        for (int i = 0; i < arr.length - 1; i++) {
-            for (int j = 0; j < arr.length - 1; j++) {
-                
+        int min = arr[0];
+        int minPos = 0;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i; j < arr.length; j++) {
+                //默认第一个为最小值，与其他值比较
+                //找到真正最小值
+                if (arr[j] > arr[j + 1]){
+                    minPos = j;
+                    min = arr[j];
+                }
             }
         }
 
