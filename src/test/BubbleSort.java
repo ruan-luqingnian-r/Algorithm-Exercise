@@ -1,5 +1,7 @@
 package test;
 
+import java.util.Arrays;
+
 /**
  * @Author: ruan
  * Date: 2021/8/3 21:31
@@ -12,10 +14,12 @@ package test;
 public class BubbleSort {
     public static void main(String[] args) {
         int[] arr = {2,3,2,4,3,5,1,5,6,2,6,7,545,465,45533,757,6,867,8,5,566,36};
+        sort(arr);
+        System.out.println(Arrays.toString(arr));
 
     }
 
-    public void sort(int[] arr){
+    public static void sort(int[] arr){
         int temp = 0;
         for (int i = 0; i < arr.length - 1; i++) {
             for (int j = 0; j < arr.length - 1 - i; j++) {
