@@ -6,4 +6,7 @@ package find;
  * @Description: 线性查找，一个一个查找
  */
 public class LinearSearch {
+    public static void main(String[] args) {
+        int[] arr = {};
+    }
 }
