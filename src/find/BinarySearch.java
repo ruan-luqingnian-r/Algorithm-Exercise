@@ -12,8 +12,8 @@ import java.util.List;
 public class BinarySearch {
     public static void main(String[] args) {
         int[] arr = {1, 2, 2, 2, 3, 3, 4, 5, 5, 5, 6, 6, 6, 7, 8, 36, 465, 545, 566, 757, 867, 45533};
-        int i = find(arr, 545, 0, arr.length);
-        System.out.println(i);
+        List<Integer> list = binarySearch(arr, 5, 0, arr.length);
+        System.out.println(list);
 
     }
 
@@ -53,11 +53,12 @@ public class BinarySearch {
         int midVel = arr[mid];
 
         if (midVel > target){
-            //向右递归
-            return binarySearch(arr, target, mid + 1, right);
-        }else if (midVel < target){
-            //向左
+            //向左递归
             return binarySearch(arr, target, left, mid - 1);
+
+        }else if (midVel < target){
+            //向右
+            return binarySearch(arr, target, mid + 1, right);
         }else {
             //找到的值
             ArrayList<Integer> list = new ArrayList<>();
@@ -67,8 +68,22 @@ public class BinarySearch {
             int temp1 = mid - 1;
             while (true){
                 //到最左边没找到则退出
-                if (temp1 < left || arr[temp1] != target)
+                if (temp1 < left || arr[temp1] != target){
+                    break;
+                }
+                list.add(temp1);
+                temp1--;
             }
+            //向右扫描
+            int temp2 = mid + 1;
+            while (true){
+                if (temp2 > right || arr[temp2] != target){
+                    break;
+                }
+                list.add(temp2);
+                temp2++;
+            }
+            return list;
         }
     }
 }
