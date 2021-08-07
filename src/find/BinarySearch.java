@@ -4,6 +4,38 @@ package find;
  * @Author: ruan
  * Date: 2021/8/4 21:18
  * @Description: 二分查找
+ * 从中间值开始，进行折半查找
  */
 public class BinarySearch {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 2, 2, 3, 3, 4, 5, 5, 5, 6, 6, 6, 7, 8, 36, 465, 545, 566, 757, 867, 45533};
+        int i = find(arr, 545, 0, arr.length);
+        System.out.println(i);
+
+    }
+
+    /**
+     * 二分查找
+     * @param arr 带查找数组
+     * @param target 目标值
+     * @param left 左索引
+     * @param right 右索引
+     * @return 数组的下标
+     */
+    public static int find(int[] arr,int target,int left,int right){
+        if (left > right){
+            return -1;
+        }
+        int mid = (left + right) / 2;
+        int midVal = arr[mid];
+
+        if (target > midVal){
+            //向右递归
+            return find(arr, target, mid + 1, right);
+        }
+        if (target < midVal){
+            return find(arr, target, left, mid - 1);
+        }
+        return mid;
+    }
 }
